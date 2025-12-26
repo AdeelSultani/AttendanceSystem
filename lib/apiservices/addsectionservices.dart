@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:attendence_system/models/course.dart';
 import 'package:attendence_system/models/section.dart';
 import 'package:http/http.dart' as http;
 
@@ -16,5 +14,16 @@ Future<http.Response> registerSection(SectionModel section) async {
 
 return response;
 }
+Future<List<SectionModel>> getSections() async {
+  final response = await http.get(
+    Uri.parse('http://192.168.18.56/AttendenceSystem/api/course/getsection'),
+  );
 
+  if (response.statusCode == 200) {
+    List jsonData = json.decode(response.body);
+    return jsonData.map((e) => SectionModel.fromJson(e)).toList();
+  } else {
+    throw Exception('No Section Found');
+  }
+}
 }

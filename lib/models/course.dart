@@ -1,19 +1,19 @@
 class CourseModel {
-  final int? courseId;
-  final String courseName;
+  final int? CourseId;
+  final String CourseName;
   final String CourseCode;
 
   CourseModel({
-     this.courseId,
-    required this.courseName,
+     this.CourseId,
+    required this.CourseName,
     required this.CourseCode,
   });
 
   // ✅ toMap method
   Map<String, dynamic> toMap() {
     return {
-      'courseId': courseId,
-      'courseName': courseName,
+      'courseId': CourseId,
+      'courseName': CourseName,
       'CourseCode': CourseCode,
     };
   }
@@ -21,8 +21,8 @@ class CourseModel {
   // Factory constructor for JSON -> object
   factory CourseModel.fromJson(Map<String, dynamic> json) {
     return CourseModel(
-      courseId: json['courseId'] ?? 0,
-      courseName: json['courseName'] ?? '',
+      CourseId: json['CourseId'] ,
+      CourseName: json['CourseName'] ,
       CourseCode: json['CourseCode'] ?? '',
     );
   }

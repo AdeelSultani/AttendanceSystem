@@ -1,11 +1,12 @@
 import 'package:attendence_system/screeens/addcoursescreen.dart';
+import 'package:attendence_system/screeens/addsectioncourse.dart';
 import 'package:attendence_system/screeens/addsectionscreen.dart';
 import 'package:flutter/material.dart';
 
 
 class TeacherDashboard extends StatelessWidget {
   final int userId;
-  const TeacherDashboard({Key? key, required this.userId}) : super(key: key);
+ TeacherDashboard({Key? key, required this.userId});
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +34,13 @@ class TeacherDashboard extends StatelessWidget {
               title: Text('Add Section'),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (_) => AddSectionScreen()));
+              },
+            ),
+             ListTile(
+              leading: Icon(Icons.castle_outlined),
+              title: Text('Add Section Course'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => SectionCourseScreen(teacherid: userId,)));
               },
             ),
             ListTile(

@@ -23,7 +23,7 @@ class _AddCourseScreenState extends State<AddCourseScreen> {
     setState(() => isLoading = true);
 
     final course = CourseModel(
-      courseName: courseController.text.trim(),
+      CourseName: courseController.text.trim(),
       CourseCode: CourseCodeController.text.trim(),
     );
 
