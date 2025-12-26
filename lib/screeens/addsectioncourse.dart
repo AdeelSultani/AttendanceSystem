@@ -16,7 +16,7 @@ class _SectionCourseScreenState extends State<SectionCourseScreen> {
   SectionModel? selectedSection;
   CourseModel? selectedCourse;
 
-  late int teacherid;
+   int? teacherid;
 
   List<SectionModel> sectionList = [];
   List<CourseModel> courseList = [];
@@ -85,7 +85,6 @@ class _SectionCourseScreenState extends State<SectionCourseScreen> {
 
                   const SizedBox(height: 20),
 
-                  /// 🔽 Course Dropdown
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     decoration: BoxDecoration(
@@ -114,8 +113,6 @@ class _SectionCourseScreenState extends State<SectionCourseScreen> {
                   ),
 
                   const SizedBox(height: 30),
-
-                  /// ✅ Button
                   ElevatedButton(
                     onPressed: () async{
                       if (selectedSection != null &&
@@ -132,7 +129,7 @@ class _SectionCourseScreenState extends State<SectionCourseScreen> {
                         int? cid=selectedCourse!.CourseId;
                         int? sid=selectedSection!.sectionId;
                         
-                        var response= await Addcourseservices().addcoursetosection(cid,sid,teacherid);
+                        var response= await Addcourseservices().addcoursetosection(cid,sid,teacherid!);
                         if(response.statusCode==200){
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('Course successfully assigned to the Section '))

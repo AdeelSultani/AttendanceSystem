@@ -19,7 +19,7 @@ return response;
 
 Future<List<CourseModel>> getCourses() async {
   final response = await http.get(
-    Uri.parse('http://192.168.18.56/AttendenceSystem/api/course/getcourse'),
+    Uri.parse('http://192.168.18.56/AttendenceSystem/api/course/Getcourse'),
   );
 
   if (response.statusCode == 200) {
@@ -29,28 +29,14 @@ Future<List<CourseModel>> getCourses() async {
     throw Exception('No Section Found');
   }
 }Future<http.Response> addcoursetosection(
-    int? courseId,
-    int? sectionId,
-    int teacherId,
-) async {
-
-  final url = Uri.parse(
-      'http://192.168.18.56/AttendenceSystem/api/course/AddCoursetoSection');
-
-  final body = {
-    "CourseId": courseId,
-    "SectionId": sectionId,
-    "TeacherId": teacherId,
-  };
-
-  final response = await http.post(
-    url,
-    headers: {'Content-Type': 'application/json'},
-    body: jsonEncode(body),
-  );
+    int? CourseId,
+    int? SectionId,
+    int TeacherId,
+) async { 
+    final response = await http.post(
+      Uri.parse('http://192.168.18.56/AttendenceSystem/api/course/AddCoursetoSection?CourseId=$CourseId&SectionId=$SectionId&TeacherId=$TeacherId'),
+    );
 
   return response;
 }
-
-
 }

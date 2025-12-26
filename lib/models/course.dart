@@ -23,7 +23,7 @@ class CourseModel {
     return CourseModel(
       CourseId: json['CourseId'] ,
       CourseName: json['CourseName'] ,
-      CourseCode: json['CourseCode'] ?? '',
+      CourseCode: json['CourseCode'] ,
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:attendence_system/screeens/addcoursescreen.dart';
 import 'package:attendence_system/screeens/addsectioncourse.dart';
 import 'package:attendence_system/screeens/addsectionscreen.dart';
+import 'package:attendence_system/screeens/enrollementscreen.dart';
+import 'package:attendence_system/screeens/markattendace.dart';
 import 'package:flutter/material.dart';
 
 
@@ -45,9 +47,9 @@ class TeacherDashboard extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(Icons.person_add),
-              title: Text('Add Student'),
+              title: Text('Enroll Student'),
               onTap: () {
-               // Navigator.push(context, MaterialPageRoute(builder: (_) => AddStudentScreen()));
+               Navigator.push(context, MaterialPageRoute(builder: (_) => EnrollementScreen()));
               },
             ),
             ListTile(
@@ -61,7 +63,7 @@ class TeacherDashboard extends StatelessWidget {
               leading: Icon(Icons.check),
               title: Text('Mark Attendance'),
               onTap: () {
-                //Navigator.push(context, MaterialPageRoute(builder: (_) => MarkAttendanceScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (_) => MarkAttendanceScreen(teacherId: userId, courseSectionId: 7,)));
               },
             ),
           ],
