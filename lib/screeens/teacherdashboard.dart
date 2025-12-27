@@ -1,3 +1,4 @@
+import 'package:attendence_system/screeens/ViewClaimAttendance.dart';
 import 'package:attendence_system/screeens/addcoursescreen.dart';
 import 'package:attendence_system/screeens/addsectioncourse.dart';
 import 'package:attendence_system/screeens/addsectionscreen.dart';
@@ -53,10 +54,10 @@ class TeacherDashboard extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.schedule),
-              title: Text('Add Timetable'),
+              leading: Icon(Icons.visibility_sharp),
+              title: Text('View Claim Attendance'),
               onTap: () {
-               // Navigator.push(context, MaterialPageRoute(builder: (_) => AddTimetableScreen()));
+               Navigator.push(context, MaterialPageRoute(builder: (_) => TeacherClaimsScreen(teacherId: userId,)));
               },
             ),
             ListTile(

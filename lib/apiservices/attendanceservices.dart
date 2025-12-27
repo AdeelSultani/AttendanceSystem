@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 
 class AttendanceService {
   final String baseUrl = "http://192.168.18.56/AttendenceSystem/api";
+  
  Future<List<EnrolledStudent>> getEnrolledStudents(int courseSectionId) async {
     final url = Uri.parse('$baseUrl/Attendance/GetEnrolledStudents?courseSectionId=$courseSectionId');
     final response = await http.get(url);
@@ -17,11 +18,6 @@ class AttendanceService {
       throw Exception('Failed to fetch enrolled students');
     }
   }
-
-
-
-
-
   /// Mark Attendance
   Future<bool> markAttendance(AttendanceModel attendance) async {
     final url = Uri.parse('$baseUrl/Attendance/MarkAttendance');

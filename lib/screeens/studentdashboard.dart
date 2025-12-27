@@ -1,3 +1,5 @@
+import 'package:attendence_system/screeens/claimattendancescreen.dart';
+import 'package:attendence_system/screeens/studentattendancescreen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -23,14 +25,14 @@ class StudentDashboard extends StatelessWidget {
               leading: Icon(Icons.visibility),
               title: Text('View Attendance'),
               onTap: () {
-                //Navigator.push(context, MaterialPageRoute(builder: (_) => ViewAttendanceScreen(studentId: studentId)));
+                Navigator.push(context, MaterialPageRoute(builder: (_) => StudentAttendanceScreen(studentId: studentId)));
               },
             ),
             ListTile(
               leading: Icon(Icons.report),
               title: Text('Claim Attendance'),
               onTap: () {
-               // Navigator.push(context, MaterialPageRoute(builder: (_) => ClaimAttendanceScreen(studentId: studentId)));
+                Navigator.push(context, MaterialPageRoute(builder: (_) => ClaimAttendanceScreen(studentId: studentId)));
               },
             ),
           ],
